@@ -11,22 +11,31 @@ body {
   height: 100vh;
 }
 .wrapper {
-  /* background: red; */
   height: 100%;
   width: 100%;
 }
 
-section {
-  height: 100%;
-  width: 100%;
+#field_section {
+  height: 100vh;
   background: rgba(0,0,0,0.8);
-  transform: scale(0);
-  transition: scale 2s ease-in-out;
-  display: none;
+  margin-top: 100%;
+  overflow: hidden;
+  transition: 1000ms ease-in-out;
 }
 
-.section.active {
-  transform: scale(1);
+#field_section.active {
+  margin-top: 0;
+  
+}
+
+.content_wrapper {
+  color: white;
+}
+
+.content_wrapper p {
+  color: rgb(231, 231, 231);
+  margin: 0;
+  font-size: 10px;
 }
 
 
@@ -37,12 +46,14 @@ section {
   font-size: 30px;
   cursor: pointer;
   color: white;
+  
 }
+
 
 .signup_button {
   position: absolute;
   top: 50%;
-  left: 48%;
+  left: 45%;
   transform: translate(-50%,-50%);
   background: green;
   color: #fff;
@@ -50,7 +61,13 @@ section {
   padding: 8px 13px;
   cursor: pointer;
   z-index: 1;
-  
+  transform: scale(1);
+  transition: transform 600ms ease-in;
+}
+
+.signup_button.active {
+  z-index: -1;
+  transform: scale(0);
 }
 
 .signup_button:hover {
@@ -93,4 +110,21 @@ section {
   flex-direction: column;
   min-width: 300px;
 
+}
+
+input[type='submit']{
+  margin-top: 30px;
+  border: 2px solid #fff;
+  padding: 5px 30px;
+  border-radius: 5px;
+  background: rgb(211, 211, 212, 0.5);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+}
+
+input[type='submit']:hover {
+  background: rgba(0,0,0,0.5);
+  color: white;
 }
